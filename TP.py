@@ -163,9 +163,9 @@ def resultados(puntajes,jugadores):
 	textoFinal = "El ganador es :" if cantGanadores == 1 else "Los ganadores son :"
 	
 	for indice in ganadores :
-		textoFinal += " " + jugadores[indice]
+		textoFinal += " " + jugadores[indice] + " ,"
  
-	print(textoFinal)
+	print(textoFinal[:len(textoFinal)-1])
 
 # Toma los puntajes de cada jugador, y muestra por pantalla los
 # puntajes de cada jugador.
