@@ -14,18 +14,19 @@ CARACTERISTICAS:
 #                  FUNCIONES AUXILIARES
 # -----------------------------------------------------------
 
-# esValida : String , String -> Bool
+
 # Retorna True en caso de que la palabra sea valida, 
 # (si empieza con la letra pasada como parametro), 
 # en caso contrario retorna False.
+# esValida : String , String -> Bool
 def esValida(palabra,letra):
 	return palabra != "" and palabra[0].upper() == letra
 
 # Toma un numero, y retorna True en caso de que este entre 2 y 6 sin incluir.
 # En caso contrario retorna False.
 # cantJugadoresValida : Int -> Bool
-def cantJugadoresValida(numeroJugadores):
-	return numeroJugadores < 6 and numeroJugadores > 1
+def cantJugadoresValida(cantJugadores):
+	return cantJugadores < 6 and cantJugadores > 1
 
 # Retorna una lista con los caracteres ASCII desde el 65 al 90.
 # Los cuales son A,B,...,Z
