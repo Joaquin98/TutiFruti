@@ -4,9 +4,9 @@ import random,os,platform
 '''
 CARACTERISTICAS:
 - Solo se permiten entre 2 y 5 jugadores.
-- Se termina el juego cuando algún jugador llega a 200 puntos o cuando se queda sin letras.
+- Se termina el juego cuando algun jugador llega a 200 puntos o cuando se queda sin letras.
 - No se permite ingresar dos palabras iguales para distintas categorias (a un mismo jugador).
-- Se concidera que una palabra es valida cuando empieza con la letra pedida.
+- Se considera que una palabra es valida cuando empieza con la letra pedida.
 '''
 
 
@@ -30,7 +30,7 @@ def cantJugadoresValida(cantJugadores):
 
 # Retorna una lista con los caracteres ASCII desde el 65 al 90.
 # Los cuales son A,B,...,Z
-# abecedarioLista : -> StringList
+# abecedarioLista : None -> StringList
 def abecedarioLista():
 	return [chr(ordenada) for ordenada in range(65,91)]
 
@@ -78,9 +78,9 @@ def filtrarValidas(palabra,letra):
 
 
 
-# Toma los nombres escritos por todos los jugadores, para una determinada letra
+# Toma las palabras escritas por todos los jugadores, para una determinada letra
 # y siguiendo las normas del enunciado, le suma los puntos correspondientes a cada jugador.
-# sumarPuntosRonda : IntList , StringList ->  
+# sumarPuntosRonda : IntList , List of StringList -> None
 def sumarPuntosRonda(puntajes,listaNombres):
 	for categoria in listaNombres:
 		numeroJugador, validas, indices = 0, [], [] 
@@ -114,7 +114,7 @@ def limpiarPantalla():
 # La funcion pide el ingreso de la cantidad de jugadores, y luego pide
 # el ingreso de los nombres de cada jugador. Retornando una lista con los
 # nombres de todos los jugadores.
-# ingresoJugadores : -> StringList
+# ingresoJugadores : None -> StringList
 def ingresoJugadores():
 
 	jugadores = []
@@ -133,7 +133,11 @@ def ingresoJugadores():
 
 	return jugadores
 
-# Pide el ingreso por teclado de cada categoria a cada jugador.
+# Dada una lista de jugadores, lista de categorias, una lista de listas
+# (que sera el tablero a completar) y la letra de la ronda actual, pide
+# a los jugadores el ingreso de las palabras. Si un jugador intenta
+# repetir una palabra, es advertido y se le pide ingresar una distinta.
+# rellenarTablero : StringList , StringList , List of List , String -> None
 def rellenarTablero(jugadores,categorias,listaNombres,letraActual):
 	for indiceJugador , nombreJugador in enumerate(jugadores):
 		recienIngresadas = []
@@ -154,7 +158,7 @@ def rellenarTablero(jugadores,categorias,listaNombres,letraActual):
 
 # Toma los puntajes de cada jugador, analiza quien/es son los
 # ganadores y lo muestra en pantalla.
-# resultados : IntList , StringList -> 
+# resultados : IntList , StringList -> None
 def resultados(puntajes,jugadores):
 
 	mayor = buscarMayor(puntajes)
@@ -169,7 +173,7 @@ def resultados(puntajes,jugadores):
 
 # Toma los puntajes de cada jugador, y muestra por pantalla los
 # puntajes de cada jugador.
-# resultados : IntList , StringList -> 
+# resultados : IntList , StringList -> None
 def finalDeRonda(jugadores,puntajes):
 	limpiarPantalla()
 	print("--- Ha finalizado la ronda ---\nPuntajes hasta el momento:")
@@ -216,4 +220,4 @@ def comenzarJuego():
 
 
 
-comenzarJuego()
+#comenzarJuego()

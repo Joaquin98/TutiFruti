@@ -37,3 +37,9 @@ def test_filtrarValidas():
 	assert TP.filtrarValidas("","H") == ""
 	assert TP.filtrarValidas("hola","J") == ""
 	assert TP.filtrarValidas("habia","H") == "habia"
+
+def test_sumarPuntosRonda():
+	init = [0,0]
+	ingresos = [["","Abc"],["Abd","Abd"],["Abe","Acb"],["",""]]
+	TP.sumarPuntosRonda(init, ingresos)
+	assert init == [15,35]
