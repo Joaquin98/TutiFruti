@@ -43,3 +43,13 @@ def test_sumarPuntosRonda():
 	ingresos = [["","Abc"],["Abd","Abd"],["Abe","Acb"],["",""]]
 	TP.sumarPuntosRonda(init, ingresos)
 	assert init == [15,35]
+
+
+def test_rellenarTablero():
+	listaNombres = [[],[],[],[],[],[],[]]
+	lista = ["Andres","Amarillo","Mono","Azado","Amelia","Anana","Argentina","Adam","Azul","Oso","Azado","Amarilla","Anana","Alemania"]
+	lista.reverse()
+	TP.input = lambda: lista.pop()
+	TP.rellenarTablero(["Juan","Pepe"], ["Personas","Colores","Animales","Comidas","Flores","Frutas","Paises"],listaNombres,"A")
+	print(listaNombres)
+	assert listaNombres == [['ANDRES', 'ADAM'], ['AMARILLO', 'AZUL'], ['', ''], ['AZADO', 'AZADO'], ['AMELIA', 'AMARILLA'], ['ANANA', 'ANANA'], ['ARGENTINA', 'ALEMANIA']]
