@@ -18,6 +18,16 @@ def test_cantJugadoresValida():
 	assert TP.cantJugadoresValida(5) == True
 	assert TP.cantJugadoresValida(2) == True
 
+def test_letraAleatoria():
+	inicial , listaLetras = ["A","B","C","D"] , ["A","B","C","D"] 
+	r = []
+	i,l = 0,len(listaLetras)
+	while i < l :
+		r.append(TP.letraAleatoria(listaLetras))
+		i += 1
+	r.sort()
+	assert r == inicial
+
 def test_buscarMayor():
 	assert TP.buscarMayor([1,2,3,4,5,6]) == 6
 	assert TP.buscarMayor([13,3,543,5,1234,2,53,41,-2142,241,0,-123]) == 1234
@@ -45,11 +55,17 @@ def test_sumarPuntosRonda():
 	assert init == [15,35]
 
 
+def test_ingresoJugadores():
+	listaInput = ["1","6","2","Juan","Pepe"]
+	listaInput.reverse()
+	TP.input = lambda x=None: listaInput.pop()
+	assert TP.ingresoJugadores() == ["Juan","Pepe"]
+
+
 def test_rellenarTablero():
 	listaNombres = [[],[],[],[],[],[],[]]
 	lista = ["Andres","Amarillo","Mono","Azado","Amelia","Anana","Argentina","Adam","Azul","Oso","Azado","Amarilla","Anana","Alemania"]
 	lista.reverse()
 	TP.input = lambda: lista.pop()
 	TP.rellenarTablero(["Juan","Pepe"], ["Personas","Colores","Animales","Comidas","Flores","Frutas","Paises"],listaNombres,"A")
-	print(listaNombres)
 	assert listaNombres == [['ANDRES', 'ADAM'], ['AMARILLO', 'AZUL'], ['', ''], ['AZADO', 'AZADO'], ['AMELIA', 'AMARILLA'], ['ANANA', 'ANANA'], ['ARGENTINA', 'ALEMANIA']]
