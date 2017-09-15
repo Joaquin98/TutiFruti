@@ -219,5 +219,5 @@ def comenzarJuego():
 	resultados(puntajes,jugadores)
 
 
-
-#comenzarJuego()
+if __name__ == "__main__":
+	comenzarJuego()
