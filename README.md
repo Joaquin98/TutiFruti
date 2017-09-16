@@ -1,5 +1,4 @@
 # Tutti Fruti
-***********
 
 #### Autores:
 * Joaquin Manuel
