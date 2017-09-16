@@ -1,5 +1,7 @@
 import TP
 
+# Joaquin Manuel - Ignacio Seret
+
 def test_esValida():
 	assert TP.esValida("hola","H") == True
 	assert TP.esValida("Hola","H") == True

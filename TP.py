@@ -1,5 +1,6 @@
 import random,os,platform
 
+# Ignacio Seret - Joaquin Manuel
 
 '''
 CARACTERISTICAS:
