@@ -116,11 +116,11 @@ def limpiarPantalla():
 # nombres de todos los jugadores.
 # ingresoJugadores : None -> StringList
 def ingresoJugadores():
-
 	jugadores = []
 	cantJugadores = 6
 	limpiarPantalla()
 	cantJugadores = int(input("Ingrese la cantidad de jugadores: "))
+
 	while not cantJugadoresValida(cantJugadores):
 		limpiarPantalla()
 		print("Cantidad de jugadores invalida!")
@@ -160,7 +160,6 @@ def rellenarTablero(jugadores,categorias,listaNombres,letraActual):
 # ganadores y lo muestra en pantalla.
 # resultados : IntList , StringList -> None
 def resultados(puntajes,jugadores):
-
 	mayor = buscarMayor(puntajes)
 	ganadores = indicesGanadores(puntajes,mayor)
 	cantGanadores = len(ganadores)
@@ -219,5 +218,5 @@ def comenzarJuego():
 	resultados(puntajes,jugadores)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": # Para que comenzarJuego() no se invoque cuando se esta ejecutando pytest
 	comenzarJuego()
